@@ -230,29 +230,15 @@
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://netbanking.hdfcbank.com/netbanking/jsdir/jquery-migrate.js"></script>
-    <script type="text/javascript" src="https://netbanking.hdfcbank.com/netbanking/jsdir/script.js"></script>
-    <script src="banking.hdfcbank.com/netbanking/jsdir/bootstrap.min.js?v=1"></script>
 
-    <script src="https://netbanking.hdfcbank.com/netbanking/jsdir/virtualkeyboard.js?v=7"></script>
-    <script src="https://netbanking.hdfcbank.com/netbanking/jsdir/des.js"></script>
-    <script src="https://netbanking.hdfcbank.com/netbanking/jsdir/HmacSHA256.js"></script>
-    <script src="https://netbanking.hdfcbank.com/netbanking/jsdir/hashtable.js"></script>
-    <script src="https://netbanking.hdfcbank.com/netbanking/jsdir/rsa.js"></script>
-
-    <script src="https://netbanking.hdfcbank.com/netbanking/jsdir/RS_01_eng_ext.js?v=1"></script>
 
     <script>
         $(document).ready(function () {
-            // Add a click event handler to the formSubmit button
             $("#formSubmit").click(function () {
-                // Show the passwordForm
                 if ($("#userId").val() !== '') {
-                    // Show the passwordForm
                     $("#passwordForm").show();
                     $(this).text("login");
                 } else {
-                    // If userId is empty, display an error message or handle as needed
                     alert("User ID is required!");
                 }
             });
