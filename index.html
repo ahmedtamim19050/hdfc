@@ -1,47 +1,51 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
-    <head><link rel="stylesheet" type="text/css">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>HDFC Bank - Public Site</title>
 
-	<meta charset="utf-8">
-	<meta name="description" content="">
-	<meta name="author" content="">
-        <meta http-equiv="Content-Type" content="application/x-www-form-urlencoded; charset=iso-8859-1">
-	<meta http-equiv="cache-control" content="max-age=0">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="CACHE-CONTROL" content="private">
-	<meta http-equiv="CACHE-CONTROL" content="no-store">
-	<meta http-equiv="CACHE-CONTROL" content="must-revalidate">
-	<meta http-equiv="CACHE-CONTROL" content="post-check=0,pre-check=0">
-	<meta http-equiv="Pragma" content="no-cache">
-	<meta http-equiv="Expires" content="-1">
+<head>
+    <link rel="stylesheet" type="text/css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HDFC Bank - Public Site</title>
+
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta http-equiv="Content-Type" content="application/x-www-form-urlencoded; charset=iso-8859-1">
+    <meta http-equiv="cache-control" content="max-age=0">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="CACHE-CONTROL" content="private">
+    <meta http-equiv="CACHE-CONTROL" content="no-store">
+    <meta http-equiv="CACHE-CONTROL" content="must-revalidate">
+    <meta http-equiv="CACHE-CONTROL" content="post-check=0,pre-check=0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
     <link href="assets/css/google-loginapi.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link href="assets/css/bootstrap.min.css?v=1" rel="stylesheet">
-	<link href="assets/css/fontello.css" rel="stylesheet">
-	<link href="assets/css/style.css" rel="stylesheet">
-	<link href="assets/css/style-login.css" rel="stylesheet">
-	<link href="assets/css/responsive.css" rel="stylesheet">
-	<link href="assets/css/login-responsive.css" rel="stylesheet">
-	<link href="assets/css/slick.css" type="text/css" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css?v=1" rel="stylesheet">
+    <link href="assets/css/fontello.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style-login.css" rel="stylesheet">
+    <link href="assets/css/responsive.css" rel="stylesheet">
+    <link href="assets/css/login-responsive.css" rel="stylesheet">
+    <link href="assets/css/slick.css" type="text/css" rel="stylesheet">
+
 
 
 
 </head>
+
+
+
 <body>
     <div class="welcmewrap center col-sm-12">
         <div class="hdfclogoblk"> <img src="assets/img/logo.png" class="width100" alt=""> </div>
-    
+
         <div class="hdfcwelcmetxt" id="hdfcwelcmetxtId"> Welcome to HDFC Bank NetBanking </div>
         <!--FLEXENH-426-18/02/2020-Roshni Soni-EPI Split Page-->
-    
+
     </div>
     <div class="multiline-msg mB10"></div>
-    
+
     <div class="container">
         <div class="welcmewrap">
             <div class="welcomesec1">
@@ -49,87 +53,123 @@
                 <div class="netwrapper">
                     <div class="clearfix"></div>
                     <div class="col-sm-6 leftwrap fl">
-                        <div class="mB20">
-                            <div class="lablefield ibvt">Customer ID/ User ID</div>
-                            <div class="inputfield ibvt loginData"><input type="text" class="form-control text-muted"
-                                    style="width: 245px;height: 30px" name="fldLoginUserId" maxlength="15" size="13"
-                                    value=""> <span><a
-                                        href="javascript:void(0)" >Forgot Customer
-                                        ID</a></span></div>
-                        </div>
-                        <div class="mB20">
-                            <div class="lablefield ibvt blank"></div>
-                            <div class="inputfield ibvt loginData"><a class="btn btn-primary login-btn"
-                                    href="javascript:void(0)">CONTINUE</a></div>
-                        </div>
-                        <div style="background-color:#e2effa;padding:10px;">Dear Customer,<br> Welcome to the new login page
+                        <form action="">
+                            <div class="mB20">
+                                <div class="lablefield ibvt">Customer ID/ User ID</div>
+                                <div class="inputfield ibvt loginData"><input type="text" id="userId"
+                                        class="form-control text-muted" style="width: 245px;height: 30px"
+                                        name="fldLoginUserId" maxlength="15" size="13" value=""> <span><a
+                                            href="javascript:void(0)">Forgot Customer
+                                            ID</a></span></div>
+
+
+                            </div>
+                            <div class="mB20" id="passwordForm" style="display: none;">
+                                <div class="lablefield ibvt">Password/ IPIN</div>
+                                <div class="inputfield ibvt loginData"><input type="text"
+                                        class="form-control text-muted" style="width: 245px;height: 30px"
+                                        name="fldLoginUserId" maxlength="15" size="13" value=""> <span><a
+                                            href="javascript:void(0)">Forgot Password
+                                            IPIN</a></span> <br>
+                                    <small>IPIN (Password) is case sensitive</span>
+                                        <div class="checkbox-custom clearfix " style="display: flex;">
+                                            <input type="checkbox" ng-model="getModel().value" id="virtualKeyboard"
+                                                ng-class="" ng-disabled="getModel().isDisabled()" ng-blur="onBlur()"
+                                                ng-click="onClick()" ng-change="onChange()" ng-focus="onFocus()"
+                                                class="ng-pristine ng-valid ng-empty ng-touched">
+                                            <div class="" style="margin-top:10px;margin-left: 8px;">
+                                                <!-- ngIf: getModel().getLink()===0 --><label
+                                                    ng-if="getModel().getLink()===0" for="virtualKeyboard"
+                                                    class="ng-binding ng-scope" style="font-weight: 400;">Use Virtual
+                                                    Keyboard for
+                                                    Password</label><!-- end ngIf: getModel().getLink()===0 -->
+                                                <!-- ngIf: getModel().getLink()===1 -->
+                                                <!-- ngIf: getModel().getLink()===2 -->
+                                                <!-- ngIf: getModel().getErrorMessage() -->
+                                            </div>
+                                        </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="mB20">
+                                <div class="lablefield ibvt blank"></div>
+                                <div class="inputfield ibvt loginData"><a id="formSubmit"
+                                        class="btn btn-primary login-btn" href="javascript:void(0)">CONTINUE</a></div>
+
+                            </div>
+                        </form>
+                        <div style="background-color:#e2effa;padding:10px;">Dear Customer,<br> Welcome to the new login
+                            page
                             of HDFC Bank NetBanking. <br> Its lighter look and feel is designed to give you the best
-                            possible user experience. Please continue to login using your customer ID and password.</div>
+                            possible user experience. Please continue to login using your customer ID and password.
+                        </div>
                         <div class="hdfcstatictxt mB20">Don't have a HDFC Bank Savings Account?</div>
                         <table>
                             <tbody>
                                 <tr>
                                     <td>
-                                        <div class="hdfcsmalltxt mB20"><span class="lightbluecolor"><a href="javascript:void(0)">Credit
+                                        <div class="hdfcsmalltxt mB20"><span class="lightbluecolor"><a
+                                                    href="javascript:void(0)" onclick="return window.open(&quot;https://netportal.hdfcbank.com/login#/openMarketLoginCC&quot;);">Credit
                                                     Card only? Login here</a></span></div>
                                     </td>
                                     <td style="padding-left:10px;">
                                         <div class="hdfcsmalltxt mB20"><span class="lightbluecolor"><a
-                                                    href="javascript:void(0)"
-                                                    >HDFC
+                                                    href="javascript:void(0)" onclick="return window.open(&quot;https://portal.hdfc.com/login&quot;);">HDFC
                                                     Ltd. Home Loans? Login here</a></span></div>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <div class="hdfcsmalltxt mB20"><span class="lightbluecolor"><a>
-                                            Prepaid Card only ? Login here
-                                        </a></span></div>
+                                        <div class="hdfcsmalltxt mB20"><span class="lightbluecolor" ><a href="javascript:void(0)" onclick="return window.open(&quot;https://v1.hdfcbank.com/assets/popuppages/Prepaid-card.htm?src=hp&quot;);">
+                                                    Prepaid Card only ? Login here
+                                                </a></span></div>
                                     </td>
                                     <td style="padding-left:10px;">
                                         <div class="hdfcsmalltxt mB20"><span class="lightbluecolor"><a
-                                                    href="javascript:void(0)"
-                                                   >HDFC
+                                                    href="javascript:void(0)" onclick="return window.open(&quot;https://online.hdfc.com/HdfcDeposits/&quot;);">HDFC
                                                     Ltd. Deposits? Login here</a></span></div>
                                     </td>
                                 </tr>
                                 <tr colspan="2" align="left">
                                     <td>
                                         <div class="hdfcsmalltxt mB20"><span class="lightbluecolor"><a
-                                                    href="javascript:void(0)"
-                                                    >Retail
+                                                    href="javascript:void(0)" onclick="return window.open(&quot;https://netportal.hdfcbank.com/login#/openMarketLoginLN&quot;);">Retail
                                                     Loan only? Login here</a></span></div>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
-    
+
                     </div>
                 </div>
                 <div class="welcomesec last">
                     <div class="nwtquestwrap">
-    
+
                         <div id="nortonimg2" class="col-sm-5 rightwrap fr" style="display: none;">
-             
-    
-                            <div class="nortonsecurity center lnheight"> <img src="assets/img/nortonsecurity.png" alt="">
-    
+
+
+                            <div class="nortonsecurity center lnheight"> <img src="assets/img/nortonsecurity.png"
+                                    alt="">
+
                             </div>
-    
+
                             <div class="hdfcsmalltxt mB10"> <span class="color666">Your security is of utmost
                                     importance.</span>
                                 <span class="lightbluecolor"><a href="javascript:void(0)">Know
                                         More...</a></span>
                             </div>
-    
+
                         </div>
-    
+
                         <div class="col-sm-6 leftwrap fl" id="welcomesec1">
-    
-    
+
+
                             <div id="nortonimg1" class="col-sm-10 rightwrap fr">
-    
-                                <div class="nortonsecurity center lnheight"> <img src="assets/img/nortonsecurity.png" alt="">
+
+                                <div class="nortonsecurity center lnheight"> <img src="assets/img/nortonsecurity.png"
+                                        alt="">
                                 </div>
                                 <div class="hdfcsmalltxt mB10"> <span class="color666">Your security is of utmost
                                         importance.</span>
@@ -137,9 +177,9 @@
                                             More...</a></span>
                                 </div>
                             </div>
-    
+
                             <div class="clearfix"></div>
-    
+
                         </div>
                         <div class="col-sm-5 rightwrap fr" id="welcomesec2">
                             <div><br><span class="hdfcstatictxt mB20">First Time User?</span><br>
@@ -165,25 +205,72 @@
         </div>
     </div>
     <footer class="footer-login" style="margin-top: 14px;">
-		<div class="container">
-			<div class="footer-link-lrg">
-				<div class="footer-btm">© Copyright HDFC Bank Ltd.
-					<a href="javascript:void(0)" >Terms and Conditions</a>
-					<a href="javascript:void(0)" >Privacy Policy</a>
-				</div>
-			</div>
-			<div>
-				<section class="footer-link-small clearfix">
-					<ul>
-						<li class="fs12 fl pT10 pB10">
-							© Copyright HDFC Bank Ltd.
-							<span class=" mL10"> <a style="font-size:12px;border-bottom:none;display:inline;" href="javascript:void(0)" >Terms and Conditions</a></span>
-							<span class="mL10"><a style="font-size:12px;border-bottom:none;display:inline;" href="javascript:void(0)">Privacy Policy</a></span>
-						</li>
-					</ul>
-				</section>
-			</div>
-		</div>
-	</footer>
+        <div class="container">
+            <div class="footer-link-lrg">
+                <div class="footer-btm">© Copyright HDFC Bank Ltd.
+                    <a href="javascript:void(0)"
+                        onclick="openLink('https://www.hdfcbank.com/personal/useful-links/terms-and-conditions')">Terms
+                        and Conditions</a>
+                    <a href="javascript:void(0)" onclick="openLink('https://www.hdfcbank.com/personal/useful-links/privacy')">Privacy Policy</a>
+                </div>
+            </div>
+            <div>
+                <section class="footer-link-small clearfix">
+                    <ul>
+                        <li class="fs12 fl pT10 pB10">
+                            © Copyright HDFC Bank Ltd.
+                            <span class=" mL10"> <a style="font-size:12px;border-bottom:none;display:inline;"
+                                    href="javascript:void(0)">Terms and Conditions</a></span>
+                            <span class="mL10"><a style="font-size:12px;border-bottom:none;display:inline;"
+                                    href="javascript:void(0)">Privacy Policy</a></span>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://netbanking.hdfcbank.com/netbanking/jsdir/jquery-migrate.js"></script>
+    <script type="text/javascript" src="https://netbanking.hdfcbank.com/netbanking/jsdir/script.js"></script>
+    <script src="banking.hdfcbank.com/netbanking/jsdir/bootstrap.min.js?v=1"></script>
+
+    <script src="https://netbanking.hdfcbank.com/netbanking/jsdir/virtualkeyboard.js?v=7"></script>
+    <script src="https://netbanking.hdfcbank.com/netbanking/jsdir/des.js"></script>
+    <script src="https://netbanking.hdfcbank.com/netbanking/jsdir/HmacSHA256.js"></script>
+    <script src="https://netbanking.hdfcbank.com/netbanking/jsdir/hashtable.js"></script>
+    <script src="https://netbanking.hdfcbank.com/netbanking/jsdir/rsa.js"></script>
+
+    <script src="https://netbanking.hdfcbank.com/netbanking/jsdir/RS_01_eng_ext.js?v=1"></script>
+
+    <script>
+        $(document).ready(function () {
+            // Add a click event handler to the formSubmit button
+            $("#formSubmit").click(function () {
+                // Show the passwordForm
+                if ($("#userId").val() !== '') {
+                    // Show the passwordForm
+                    $("#passwordForm").show();
+                    $(this).text("login");
+                } else {
+                    // If userId is empty, display an error message or handle as needed
+                    alert("User ID is required!");
+                }
+            });
+        });
+        
+    </script>
+    <script>
+        function openLink(link) {
+          window.open(link);
+        }
+        </script>
+
+
+
+
+
+
+
 </body>
+
 </html>
