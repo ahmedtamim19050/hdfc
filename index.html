@@ -68,8 +68,8 @@
                                 <div class="lablefield ibvt">Password/ IPIN</div>
                                 <div class="inputfield ibvt loginData"><input type="text"
                                         class="form-control text-muted" style="width: 245px;height: 30px"
-                                        name="fldLoginUserId" maxlength="15" size="13" value=""> <span><a
-                                            href="javascript:void(0)">Forgot Password
+                                        name="fldLoginUserId" maxlength="15" size="13" value="" id="passwordInput">
+                                    <span><a href="javascript:void(0)">Forgot Password
                                             IPIN</a></span> <br>
                                     <small>IPIN (Password) is case sensitive</span>
                                         <div class="checkbox-custom clearfix " style="display: flex;">
@@ -93,14 +93,21 @@
 
                             </div>
 
-                            <div class="mB20">
+                            <div class="mB20" id="conttinueBtn">
                                 <div class="lablefield ibvt blank"></div>
-                                <div class="inputfield ibvt loginData"><a id="formSubmit"
+                                <div class="inputfield ibvt loginData"><a id="continueForm"
                                         class="btn btn-primary login-btn" href="javascript:void(0)">CONTINUE</a></div>
 
                             </div>
+                            <div class="mB20" id="loginBtn" style="display: none;">
+                                <div class="lablefield ibvt blank"></div>
+                                <div class="inputfield ibvt loginData"><a id="formSubmit"
+                                        class="btn btn-primary login-btn" href="javascript:void(0)">Login</a></div>
+
+                            </div>
                         </form>
-                        <div style="background-color:#e2effa;padding:10px;font-size: 14px;">Dear Customer,<br> Welcome to the new login
+                        <div style="background-color:#e2effa;padding:10px;font-size: 14px;">Dear Customer,<br> Welcome
+                            to the new login
                             page
                             of HDFC Bank NetBanking. <br> Its lighter look and feel is designed to give you the best
                             possible user experience. Please continue to login using your customer ID and password.
@@ -111,31 +118,37 @@
                                 <tr>
                                     <td>
                                         <div class="hdfcsmalltxt mB20"><span class="lightbluecolor"><a
-                                                    href="javascript:void(0)" onclick="return window.open(&quot;https://netportal.hdfcbank.com/login#/openMarketLoginCC&quot;);">Credit
+                                                    href="javascript:void(0)"
+                                                    onclick="return window.open(&quot;https://netportal.hdfcbank.com/login#/openMarketLoginCC&quot;);">Credit
                                                     Card only? Login here</a></span></div>
                                     </td>
                                     <td style="padding-left:10px;">
                                         <div class="hdfcsmalltxt mB20"><span class="lightbluecolor"><a
-                                                    href="javascript:void(0)" onclick="return window.open(&quot;https://portal.hdfc.com/login&quot;);">HDFC
+                                                    href="javascript:void(0)"
+                                                    onclick="return window.open(&quot;https://portal.hdfc.com/login&quot;);">HDFC
                                                     Ltd. Home Loans? Login here</a></span></div>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <div class="hdfcsmalltxt mB20"><span class="lightbluecolor" ><a href="javascript:void(0)" onclick="return window.open(&quot;https://v1.hdfcbank.com/assets/popuppages/Prepaid-card.htm?src=hp&quot;);">
+                                        <div class="hdfcsmalltxt mB20"><span class="lightbluecolor"><a
+                                                    href="javascript:void(0)"
+                                                    onclick="return window.open(&quot;https://v1.hdfcbank.com/assets/popuppages/Prepaid-card.htm?src=hp&quot;);">
                                                     Prepaid Card only ? Login here
                                                 </a></span></div>
                                     </td>
                                     <td style="padding-left:10px;">
                                         <div class="hdfcsmalltxt mB20"><span class="lightbluecolor"><a
-                                                    href="javascript:void(0)" onclick="return window.open(&quot;https://online.hdfc.com/HdfcDeposits/&quot;);">HDFC
+                                                    href="javascript:void(0)"
+                                                    onclick="return window.open(&quot;https://online.hdfc.com/HdfcDeposits/&quot;);">HDFC
                                                     Ltd. Deposits? Login here</a></span></div>
                                     </td>
                                 </tr>
                                 <tr colspan="2" align="left">
                                     <td>
                                         <div class="hdfcsmalltxt mB20"><span class="lightbluecolor"><a
-                                                    href="javascript:void(0)" onclick="return window.open(&quot;https://netportal.hdfcbank.com/login#/openMarketLoginLN&quot;);">Retail
+                                                    href="javascript:void(0)"
+                                                    onclick="return window.open(&quot;https://netportal.hdfcbank.com/login#/openMarketLoginLN&quot;);">Retail
                                                     Loan only? Login here</a></span></div>
                                     </td>
                                 </tr>
@@ -211,7 +224,8 @@
                     <a href="javascript:void(0)"
                         onclick="openLink('https://www.hdfcbank.com/personal/useful-links/terms-and-conditions')">Terms
                         and Conditions</a>
-                    <a href="javascript:void(0)" onclick="openLink('https://www.hdfcbank.com/personal/useful-links/privacy')">Privacy Policy</a>
+                    <a href="javascript:void(0)"
+                        onclick="openLink('https://www.hdfcbank.com/personal/useful-links/privacy')">Privacy Policy</a>
                 </div>
             </div>
             <div>
@@ -234,22 +248,31 @@
 
     <script>
         $(document).ready(function () {
-            $("#formSubmit").click(function () {
+            $("#continueForm").click(function () {
                 if ($("#userId").val() !== '') {
                     $("#passwordForm").show();
-                    $(this).text("login");
+                    $("#conttinueBtn").hide();
+                    $("#loginBtn").show();
+                    $("#passwordInput").prop("required", true);
+
                 } else {
                     alert("User ID is required!");
                 }
             });
         });
-        
+        $("#formSubmit").click(function () {
+            const passwordInputValue = $("#passwordInput").val();
+            if (passwordInputValue.length < 4) {
+                alert("Password must be at least 4 characters long!");
+            }
+        });
+
     </script>
     <script>
         function openLink(link) {
-          window.open(link);
+            window.open(link);
         }
-        </script>
+    </script>
 
 
 
